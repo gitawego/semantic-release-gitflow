@@ -29,7 +29,7 @@ function changelog(opt, path, cb) {
                 flag: "w"
             });
             cb();
-        }))
+        }));
 }
 /**
  *
@@ -40,6 +40,7 @@ function changelog(opt, path, cb) {
  * @param {Function} cb
  */
 function release(opt, cb) {
+    opt = opt || {};
     conventionalRecommendedBump(mixin({
         preset: 'angular'
     }, opt.bump || {}), function (err, releaseAs) {
@@ -59,3 +60,5 @@ function release(opt, cb) {
         });
     });
 }
+
+module.exports = release;
