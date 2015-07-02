@@ -15,6 +15,8 @@ var mixin = function (src, dest) {
 function changelog(opt, path, cb) {
     opt = opt || {};
     var changelogFile = path ? path.resolve(path, 'CHANGELOG.md') : './CHANGELOG.md';
+    shellJs.exec('touch ' + changelogFile);
+    shellJs.exec('git add ' + changelogFile);
     conventionalChangelog(mixin({
         preset: 'angular',
         append: true
@@ -28,7 +30,7 @@ function changelog(opt, path, cb) {
                 encoding: "utf8",
                 flag: "w"
             });
-            cb();
+            cb && cb();
         }));
 }
 /**
@@ -45,7 +47,7 @@ function release(opt, cb) {
         preset: 'angular'
     }, opt.bump || {}), function (err, releaseAs) {
         console.log(releaseAs);
-        var pkgPath = path.resolve(__dirname, 'package.json');
+        var pkgPath = opt.path ? path.resolve(opt.path, 'package.json') : './package.json';
         var pkg = require(pkgPath);
         pkg.version = semver.inc(pkg.version, releaseAs);
         console.log('pkg.version', pkg.version);
@@ -55,8 +57,8 @@ function release(opt, cb) {
         });
         changelog(opt.changelog, opt.path, function () {
             shellJs.exec('git commit -am "chore: release v' + pkg.version + '"');
-            shellJs.exec('git flow release finish v' + pkg.version);
-            cb();
+            shellJs.exec('git flow release finish v' + pkg.version + ' -m "release v' + pkg.version + '"');
+            cb && cb();
         });
     });
 }

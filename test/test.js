@@ -8,8 +8,9 @@ var writeFileSync = require('fs').writeFileSync;
 
 describe('release', function () {
     before(function (done) {
-        shell.cd('angular');
+        shell.cd('test');
         shell.exec('git init');
+        shell.exec('git flow init -d');
         writeFileSync('test1', '');
         shell.exec('git add --all && git commit -m"chore: first commit"');
         writeFileSync('test2', '');
@@ -27,7 +28,6 @@ describe('release', function () {
     });
 
     after(function () {
-
         shell.cd('../');
     });
 
@@ -38,7 +38,7 @@ describe('release', function () {
         shell.exec('git tag v1.0.0');
         writeFileSync('test6', '');
         shell.exec('git add --all && git commit -m"feat: some more features"');
-
+        release();
 
     });
 
