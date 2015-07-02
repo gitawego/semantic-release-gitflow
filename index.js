@@ -56,7 +56,7 @@ function release(opt, cb) {
             encoding: "utf8"
         });
         changelog(opt.changelog, opt.path, function () {
-            shellJs.exec('git commit -am "chore: release v' + pkg.version + '"');
+            shellJs.exec('git commit -am "chore(release):  v' + pkg.version + '"');
             shellJs.exec('git flow release finish v' + pkg.version + ' -m "release v' + pkg.version + '"');
             cb && cb();
         });

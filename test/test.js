@@ -38,7 +38,9 @@ describe('release', function () {
         shell.exec('git tag v1.0.0');
         writeFileSync('test6', '');
         shell.exec('git add --all && git commit -m"feat: some more features"');
-        release();
+        release(null,function(){
+            done();
+        });
 
     });
 
