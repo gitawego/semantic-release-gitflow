@@ -1,5 +1,9 @@
 # semantic-release-gitflow
 
+Semantic release for [gitflow](https://github.com/petervanderdoes/gitflow)
+
+package version will be updated automatically based on recommendation of conventional changelog
+
 ##INSTALLATION
 ```shell
 npm install gitawego/semantic-release-gitflow --save-dev 
