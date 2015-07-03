@@ -20,3 +20,7 @@ release({
 
 * **bump** see [conventional-recommended-bump](https://github.com/stevemao/conventional-recommended-bump) for detail
 * **changelog** see [conventional-changelog](https://github.com/ajoslin/conventional-changelog) for detail
+
+##IMPORTANT
+
+* in package.json, repository must be defined
