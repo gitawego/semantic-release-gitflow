@@ -10,8 +10,8 @@ npm install gitawego/semantic-release-gitflow --save-dev
 ```
 ##HOWTO
 ```js
-var release = require('semantic-release-gitflow');
-release({
+var semRelease = require('semantic-release-gitflow');
+semRelease.release({
     path:'directory/of/project', //optional
     bump:{}, //optional,
     changelog:{} //optional
