@@ -63,4 +63,7 @@ function release(opt, cb) {
     });
 }
 
-module.exports = release;
+module.exports = {
+    release:release,
+    changelog:changelog
+};
