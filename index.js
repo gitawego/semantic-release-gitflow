@@ -12,9 +12,9 @@ var mixin = function (src, dest) {
     return src;
 };
 
-function changelog(opt, path, cb) {
+function changelog(opt, pkgPath, cb) {
     opt = opt || {};
-    var changelogFile = path ? path.resolve(path, 'CHANGELOG.md') : './CHANGELOG.md';
+    var changelogFile = pkgPath ? path.resolve(pkgPath, './CHANGELOG.md') : './CHANGELOG.md';
     shellJs.exec('touch ' + changelogFile);
     shellJs.exec('git add ' + changelogFile);
     conventionalChangelog(mixin({
@@ -46,9 +46,10 @@ function release(opt, cb) {
     conventionalRecommendedBump(mixin({
         preset: 'angular'
     }, opt.bump || {}), function (err, releaseAs) {
-        console.log(releaseAs);
+        console.log("releaseAs",releaseAs);
         var pkgPath = opt.path ? path.resolve(opt.path, 'package.json') : './package.json';
         var pkg = require(pkgPath);
+        console.log("old pkg",pkg.version);
         pkg.version = semver.inc(pkg.version, releaseAs);
         console.log('pkg.version', pkg.version);
         shellJs.exec('git flow release start v' + pkg.version);

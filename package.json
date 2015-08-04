@@ -1,6 +1,6 @@
 {
 	"name": "semantic-release-gitflow",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -17,7 +17,7 @@
 	},
 	"homepage": "https://github.com/gitawego/semantic-release-gitflow#readme",
 	"dependencies": {
-		"conventional-changelog": "^0.1.0-alpha.3",
+		"conventional-changelog": "^0.2.1",
 		"conventional-recommended-bump": "^0.0.2",
 		"semver": "^4.3.6",
 		"shelljs": "^0.5.1",
