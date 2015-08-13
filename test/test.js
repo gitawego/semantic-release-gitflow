@@ -39,7 +39,6 @@ describe('release', function () {
 
     it('should work if there is a semver tag', function (done) {
         var i = 0;
-
         //shell.exec('git tag v1.0.0');
         writeFileSync('test6', '');
         shell.exec('git add --all && git commit -m"feat: some more features"');
