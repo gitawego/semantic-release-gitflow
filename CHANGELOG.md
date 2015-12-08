@@ -1,3 +1,17 @@
+<a name="0.1.0"></a>
+# [0.1.0](https://github.com/gitawego/semantic-release-gitflow/compare/v0.0.5...v0.1.0) (2015-12-08)
+
+
+### Bug Fixes
+
+* **commit:** release message is not in right format ([56bd058](https://github.com/gitawego/semantic-release-gitflow/commit/56bd058))
+
+### Features
+
+* **build:** added build script ([68c4bbb](https://github.com/gitawego/semantic-release-gitflow/commit/68c4bbb))
+
+
+
 <a name="0.0.5"></a>
 ## [0.0.5](https://github.com/gitawego/semantic-release-gitflow/compare/v0.0.4...v0.0.5) (2015-12-08)
 
