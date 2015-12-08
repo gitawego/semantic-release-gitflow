@@ -1,11 +1,11 @@
 {
 	"name": "semantic-release-gitflow",
-	"version": "0.0.5",
+	"version": "0.1.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
 		"test": "./node_modules/.bin/mocha",
-		"release":"node build.js"
+		"release": "node build.js"
 	},
 	"repository": {
 		"type": "git",
